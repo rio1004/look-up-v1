@@ -15,8 +15,8 @@ const Login = (props: Props) => {
       <ThemedView style={styles.mt32}>
         <ThemedText type="subtitle">Login to your account</ThemedText>
         <ThemedView style={[styles.mt16, { width: 300 }]}>
-          <ThemedInput />
-          <ThemedInput />
+          <ThemedInput placeholder="Enter your username" />
+          <ThemedInput placeholder="Enter you password" />
         </ThemedView>
         <ThemedView style={styles.flexBetween}>
           <ThemedView style={styles.flexBetween}>
@@ -24,8 +24,13 @@ const Login = (props: Props) => {
           </ThemedView>
           <ThemedText colorVariant="accent">Forgot your password</ThemedText>
         </ThemedView>
-
-        <ThemedView style={[styles.flexBetween, styles.mt16]}>
+        <ThemedBtn
+          title="Login"
+          colorVariant="accent"
+          variant="default"
+          style={[styles.mt16]}
+        />
+        <ThemedView style={[styles.flexBetween, styles.my32]}>
           <ThemedView style={styles.dash} />
           <ThemedText>Or continue with</ThemedText>
           <ThemedView style={styles.dash} />
@@ -57,6 +62,9 @@ const styles = StyleSheet.create({
   mt32: {
     marginTop: 32,
   },
+  my32: {
+    marginBlock: 32,
+  },
   loginContainer: {
     display: "flex",
     minHeight: "100%",
@@ -64,6 +72,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     paddingHorizontal: 16,
+    backgroundImage: "@/assets/images/react-logo.png",
   },
 
   dash: {

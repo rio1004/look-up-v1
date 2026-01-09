@@ -1,7 +1,12 @@
 import { ColorVariant, colorPalette } from "@/constants/theme";
-import { StyleSheet, Text, TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  TouchableOpacityProps,
+} from "react-native";
 
-type Props = {
+type Props = TouchableOpacityProps & {
   title: string;
   colorVariant?: ColorVariant;
   customColor?: string;
@@ -10,6 +15,7 @@ type Props = {
 };
 
 const ThemedBtn = ({
+  style,
   title,
   colorVariant = "primary",
   customColor,
@@ -24,7 +30,7 @@ const ThemedBtn = ({
   return (
     <TouchableOpacity
       onPress={onPress}
-      style={[styles.base, styles[variant], { backgroundColor }]}
+      style={[styles.base, styles[variant], { backgroundColor }, style]}
     >
       <Text style={styles.text}>{title}</Text>
     </TouchableOpacity>
